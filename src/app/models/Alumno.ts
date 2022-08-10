@@ -5,5 +5,6 @@ export interface Alumno{
     firsName:string;
     lastName:string;
     email:string;
+    image:string;
 
 }

@@ -7,6 +7,7 @@ import { MatTable, MatTableDataSource } from '@angular/material/table';
 import Swal from 'sweetalert2';
 import { Subscription } from 'rxjs';
 import { ModifyComponent } from '../modify/modify.component';
+import { DetailAlumnoComponent } from '../detail-alumno/detail-alumno.component';
 
 @Component({
   selector: 'app-inicio',
@@ -49,6 +50,12 @@ export class InicioComponent implements OnInit {
       console.log("close ");
     }
     );
+  }
+  openDialogDetail(alumno: Alumno): void {
+    const dialogRef = this.dialog.open(DetailAlumnoComponent, {
+      data: alumno
+    });
+
   }
   openDialogModify(alumno: Alumno): void {
     const dialogRef = this.dialog.open(ModifyComponent, {

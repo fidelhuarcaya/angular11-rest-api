@@ -24,6 +24,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ModifyComponent } from './alumnos/modify/modify.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { DetailAlumnoComponent } from './alumnos/detail-alumno/detail-alumno.component';
+import { SpinnerComponent } from './shared/spinner/spinner.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 MatDialogModule
 @NgModule({
   declarations: [
@@ -31,7 +34,9 @@ MatDialogModule
     InicioComponent,
     AddAlumnoComponent,
     ModifyComponent,
-    FooterComponent
+    FooterComponent,
+    DetailAlumnoComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +56,8 @@ MatDialogModule
     MatDialogModule,
     MatFormFieldModule,
     MatToolbarModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatProgressSpinnerModule
   ],
   providers: [{
     provide: MatDialogRef,

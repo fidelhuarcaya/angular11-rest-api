@@ -1,0 +1,40 @@
+<h3>Datos del alumno</h3>
+
+<form [formGroup]="alumnos" class="example-form" >
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Id</mat-label>
+        <input matInput formControlName="id" ngModel="{{data.id}}">
+      </mat-form-field>
+    <p>
+      <img  class="images" src={{data.image}}/><br><br>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Nombres</mat-label>
+          <input matInput formControlName="name" ngModel="{{data.name}}">
+        </mat-form-field>
+      </p>
+    
+    <table class="example-full-width" cellspacing="0"><tr>
+      <td><mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Primer apellido</mat-label>
+        <input matInput formControlName="firstName"  ngModel="{{data.firstName}}">
+      </mat-form-field></td>
+      <td><mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Segundo apellido</mat-label>
+        <input matInput formControlName="lastName"  ngModel="{{data.lastName}}">
+      </mat-form-field></td>
+    </tr></table>
+  
+    <p>
+    
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Correo</mat-label>
+        <input matInput formControlName="email"  ngModel="{{data.email}}">
+      </mat-form-field>
+    </p>
+
+
+    <button mat-raised-button color="primary"  (click)="cerrar()" >Cerrar</button>
+
+    
+  </form>
+

@@ -3,10 +3,10 @@
     <button mat-icon-button >
         <mat-icon>menu</mat-icon>
       </button>
-    <span>Classroom Alumnos Example</span>
+    <span>Classroom Alumnos </span>
 
   </mat-toolbar>
-
+<app-spinner></app-spinner>
 <div class="centrar">
     <h1>Alumnos</h1>
     <button mat-raised-button color="primary" (click)="openDialog()">
@@ -47,14 +47,18 @@
         <td mat-cell *matCellDef="let element"> {{element.email}} </td>
     </ng-container>
     <ng-container matColumnDef="actions">
-        <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
-        <mat-cell *matCellDef="let element">            
-          <a mat-icon-button title="edit" (click)="openDialogModify(element)">
-            <mat-icon color="primary">create</mat-icon>
+      <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <mat-cell *matCellDef="let element">  
+          <button mat-icon-button title="Detalles" (click)="openDialogDetail(element)">
+            <mat-icon color="primary">open_in_new</mat-icon>
+          </button>  
+          <a mat-icon-button title="Editar" (click)="openDialogModify(element)">
+            <mat-icon color="primary">edit_outline</mat-icon>
           </a>
-          <button mat-icon-button title="remove" (click)="confirm(element.id)" >
-            <mat-icon color="primary">remove_circle_outline</mat-icon>
+          <button mat-icon-button title="Eliminar" (click)="confirm(element.id)" >
+            <mat-icon color="primary">delete_outline</mat-icon>
           </button>
+      
         </mat-cell>
       </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
