@@ -8,7 +8,7 @@ import { retry, catchError, map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ServiceAlumnoService {
-  url: string = "http://usermanagement-env.eba-vrmmrzs2.us-east-2.elasticbeanstalk.com/api/v1/alumnos";
+  url: string = "https://usermanagement-env.eba-vrmmrzs2.us-east-2.elasticbeanstalk.com/api/v1/alumnos";
   url_base: string = "https://s3service.azurewebsites.net/api/assets/upload";
 
 
