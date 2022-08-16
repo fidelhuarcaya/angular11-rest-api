@@ -32,7 +32,15 @@
       </mat-form-field>
     </p>
  
-    <button mat-raised-button color="primary" type="submit" [disabled]="!alumnos.valid"  (click)="updateAlumno()" >Guardar cambios</button>
+    <label>Foto</label>
+
+    <br>
+    <div class="text-center">
+    
+      <input class="form-control" type="file" (change)="onChange($event)">
+  
+    </div>
+    <button mat-raised-button color="primary" type="submit" [disabled]="!alumnos.valid"  (click)="onUpload()" >Guardar cambios</button>
 
     
   </form>
