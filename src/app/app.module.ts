@@ -27,6 +27,11 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { DetailAlumnoComponent } from './alumnos/detail-alumno/detail-alumno.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { HomeComponent } from './home/home.component';
+import {MatCardModule} from '@angular/material/card';
+import { CardComponent } from './shared/card/card.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+
 MatDialogModule
 @NgModule({
   declarations: [
@@ -36,7 +41,9 @@ MatDialogModule
     ModifyComponent,
     FooterComponent,
     DetailAlumnoComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    HomeComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +64,9 @@ MatDialogModule
     MatFormFieldModule,
     MatToolbarModule,
     MatSnackBarModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatCardModule,
+    MatGridListModule
   ],
   providers: [{
     provide: MatDialogRef,

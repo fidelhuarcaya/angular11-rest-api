@@ -1,0 +1,44 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Clasroom App</span>
+    <div class="MenuBar">
+
+      <button mat-icon-button style="margin:auto" color="primary">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <button mat-raised-button color="primary" routerLink="/" routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}">Home</button>
+    </div>
+    <span class="spacer"></span>
+    <button mat-stroked-button id="Users" style="margin-right: 16px" routerLink="/users"
+      routerLinkActive="active">Perfil</button>
+    <button mat-raised-button color="accent">Login</button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<br>
+<mat-grid-list cols="4" gutterSize="10px" rowHeight="40px:60px">
+  <mat-grid-tile *ngFor="let alumno of alumnos">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{alumno.name}}</mat-card-title>
+        <mat-card-subtitle>{{alumno.lastName}}</mat-card-subtitle>
+      </mat-card-header>
+      <img class="image" mat-card-image src={{alumno.image}} alt="Imagen del alumno">
+      <mat-card-content>
+        <p>
+          {{alumno.email}}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>
+          <mat-icon aria-hidden="false" aria-label="Example heart icon">favorite</mat-icon>
+        </button>
+        <button mat-button>
+          <mat-icon aria-hidden="false" aria-label="Example heart icon">share</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
