@@ -1,0 +1,204 @@
+
+<app-headerpatodos></app-headerpatodos>
+<!-- INICIA CODIGO HOME-->
+<main>
+    <!-- CARRUSEL DE IMAGENES  -->
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">new 
+          <div class="carousel-item active">
+          <img src="../../../assets/img/Taza1.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+              <h5>First slide label</h5>
+              <p>Some representative placeholder content for the first slide.</p>
+          </div>
+          </div>
+          <div class="carousel-item">
+          <img src="../../../assets/img/Taza2.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+              <h5>Second slide label</h5>
+              <p>Some representative placeholder content for the second slide.</p>
+          </div>
+          </div>
+          <div class="carousel-item">
+          <img src="../../../assets/img/Taza3.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+              <h5>Third slide label</h5>
+              <p>Some representative placeholder content for the third slide.</p>
+          </div>
+          </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+      </button>
+    </div>    
+    
+    <!-- PRODUCTOS PARA EL HOME  -->
+    
+    <!-- NOVEDADES   - SOLO LOS DEL ULTIMO MES ( PRIMEROS 4 )-->
+      <div class="container p-4" >
+        <h2 class="titulo">NOVEDADES DE ESTE MES</h2>
+        <div class="row ">
+          <div class="row ">
+            <div class="col-6 col-md-6 col-lg-3 " *ngFor="let tasa of tasas" id="Herramientas" >
+            <!-- <div *ngIf ="TamanioLleno"> -->
+              <div class="card text-center mb-3 font-clase">
+                <img [src]="tasa.image" style="width: 100%;height: 250px;" class="card-img-top">
+                <div class="card-body">
+                  <div class="p-1 text-white rounded-3 font-clase boton_descuento bg-danger" style="width: 65px;">5%</div>
+                  <div class="text-center my-3 mb-0">
+                    <h5 class="card-title py-2 font-clase" style="font-weight: 300; font-size: 15px;">{{tasa.nombreTasa}}</h5>
+                    <!--<p class="card-text">{{product.description}}</p>-->
+                    <p class="card-text h4 font-clase" style="font-weight: 700; font-size: 25px;">S/. {{tasa.precio.toFixed(2)}}</p>
+                  </div>
+                </div>
+                <div class="card-footer btn-group" style="padding: 0; background-color: white; border: 0;">
+                  <button class="btn btn-dark font-clase" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="border-radius: 0%;font-weight: 300; font-size: 15px;" (click)="MostrarModal(tasa.$key)" >
+                    <i class="fas fa-clipboard-list"></i> Mas informacion</button>
+                </div>
+              </div>       
+              <!-- </div> -->
+            </div>
+          </div>
+      </div>
+      </div>
+    
+      <!-- MODAL -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">DESCRIPCION DEL PRODUCTO : </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img [src]= "productoModal.image" class="card-img-top" style="width: 100%;height: 350px;">
+            <p> NOMBRE :  {{productoModal.nombre}} </p>
+            <p> DESCRIPCION: {{productoModal.descripcion}} </p>
+            <p> PRECIO :  {{productoModal.precio}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- PRODUCTOS DE TIENDA - 4 CATEGORIAS  -->
+    <div class="container p-4" id="Product" >
+      <h2 class="titulo"> PRODUCTOS EN LÍNEA</h2>
+        <div class="row ">
+          <div class="row ">
+            <div class="col-6 col-md-6 col-lg-3 " *ngFor="let product of tasas" id="Herramientas">
+              <div class="card text-center mb-3 font-clase">
+                <img [src]="product.image" class="card-img-top" style="width: 100%;height: 250px;">
+                <div class="card-body">
+            
+                  <div class="p-1 rounded-3 font-clase boton_descuento bg-danger text-white" style="width: 65px;">30%</div>
+                  <div class="text-center my-3 mb-0">
+                    <h5 class="card-title py-2 font-clase" style="font-weight: 300; font-size: 15px;">{{product.nombreTasa}}</h5>
+                    <!--<p class="card-text">{{product.description}}</p>-->
+                    <p class="card-text h4 font-clase" style="font-weight: 700; font-size: 25px;">S/. {{product.precio.toFixed(2)}}</p>
+                  </div>
+                </div>
+                <div class="card-footer btn-group" style="padding: 0; background-color: white; border: 0;">
+                  <button class="btn bg-dark font-clase text-white" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop"  style="border-radius: 0%;font-weight: 300; font-size: 15px;" (click)="MostrarModal(product.$key)">    
+                    <i class="fas fa-clipboard-list"></i> Mas informacion</button>
+                </div>
+              </div>
+          </div>
+          <!--
+          <div class="col-12">
+            <div class="d-flex justify-content-center pt-3">
+              <pagination-controls (pageChange)="pageActual = $event"></pagination-controls>
+            </div>
+          </div>
+          -->
+        </div>
+        </div>
+    </div>
+    
+    <!-- PROXIMAMENTE  -->
+    <!-- <div class="container">
+      <h2>PROXIMAMANTE....</h2>
+    </div> -->
+    
+    <!-- SOBRE NOSOTROS  -->
+    <div class="beneficios section-content" id="nosotros">
+      <div class="row">
+        <div class="col-lg-4 text-white my-3">
+          <h3><b>Gym RBE</b></h3>
+          <hr>
+          <p>
+            Empresa con más de 10 años importando máquinas para gimnasios con calidad, tecnología, resistencia. 
+          </p>
+          <p>Somos una empresa especializada en equipos para gimnasio. Nuestra principal preocupación son nuestros clientes que confían en nuestra empresa, a quienes les brindamos soporte técnico permanente durante todo el año, garantizando la productividad del negocio de nuestros clientes.</p>
+        </div>
+        <div class="col-lg-8">
+          <img class="img-fluid" style="width:90%;margin-left: 40px;" src="../../../assets/img//Taza6.jpg" alt="beneficios">
+        </div>
+      </div>
+    </div>
+    
+    <!-- TARJETAS DE CONTENIDO - SERVICIOS -->
+    <div class="container mt-4" id="servicios">
+      <h2 class="py-3"><b>SERVICIOS</b></h2>
+      <div class="row px-5">
+          <div class="col-md-4 col-12">
+            <div class="card text-center mb-3 border-dark">
+              <img src="../../../assets/img/tazas-lima.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Yoga</h5>
+                <p class="card-text">Desarrolla un nuevo estado de bienestar a través del movimiento armónico del cuerpo, la quietud de la mente y  las emociones.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-12 ">
+            <div class="card py-3 text-center mb-3 img-fluid  border-dark">
+                <img src="../../../assets/img/Taza5.jpg" class="card-img-top " alt="...">
+              <div class="card-body">
+                <h5 class="card-title"> Las mejores herramientas para entrenar</h5>
+                <p class="card-text">Las mejores herramientas para entrenar y tener una vida saludable, con una alimentación adecuada.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-12 ">
+            <div class="card text-center mb-3 img-fluid  border-dark">
+                <img src="../../../assets/img/Taza3.jpg" class="card-img-top " alt="...">
+              <div class="card-body">
+                <h5 class="card-title py-3"> Entrenadores capacitados</h5>
+                <p class="card-text">Entrenadores altamente capacitados para hacer seguimiento a nuestros usuarios, según el horario de atención.</p>
+              </div>
+            </div>
+          </div>
+          </div>
+    </div>
+    <!-- -->
+    
+    <!-- HORARIOS DE APERTURA  -->
+    <div class="container section-content text-light horarios-img" id="#horarios">
+    <div class="row">
+      <div class="col-lg-8">
+      </div>
+      <div class="col-lg-4 py-4 bg-dark">
+        <h3><b>Horario de apertura</b></h3><hr>
+        <ul>
+          <li>lun:	6:00–23:00</li>
+          <li>mar:	6:00–23:00</li>
+          <li>mié:	6:00–23:00</li>
+          <li>jue:	6:00–23:00</li>
+          <li>vie:	6:00–23:00</li>
+          <li>sáb:	6:00–23:00</li>
+          <li>dom:	6:00–13:00</li>
+        </ul>
+      </div>
+    </div>
+    </div>
+    <br>
+    </main>

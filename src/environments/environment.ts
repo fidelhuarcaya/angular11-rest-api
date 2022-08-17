@@ -3,7 +3,13 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  UserPoolId: 'us-east-1_MLl6e1eBm',
+  ClientId: '2d4m4kf7bgcdrvq3pcsouo2j4q',
+  springURL : 'https://sesionjwt.azurewebsites.net/',
+  ACCESS_TOKEN : 'accessToken',
+  AUTHORIZATION : 'Authorization',
+  BEARER : 'Bearer '
 };
 
 /*
